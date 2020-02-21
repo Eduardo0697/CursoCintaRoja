@@ -91,3 +91,86 @@
     azucar(g) y la clase Cerveza debe el atributo 
     porcentajeAlcohol. Crear los getters y setters
     correspondientes. */
+
+    class Bebida {
+        constructor(cantidad){
+            this.cantidad=cantidad;
+        }
+
+        getCantidad(){
+            return this.cantidad;
+        }
+        setCantidad(cantidad){
+            this.cantidad=cantidad;
+        }
+    }
+
+    class Cerveza extends Bebida{
+        constructor(porcentajeAlcohol,cantidad){
+            super(this.cantidad);
+            this.porcentajeAlcohol=porcentajeAlcohol;
+        }
+
+        getPorcentajeAlcohol(){
+            return this.porcentajeAlcohol;
+        }
+
+        setPorcentajeAlcohol(porcentajeAlcohol){
+            this.porcentajeAlcohol=porcentajeAlcohol;
+        }
+    }
+
+    class Refresco extends Bebida{
+        constructor(azucar,cantidad){
+            super(this.cantidad);
+            this.azucar=azucar;
+        }
+
+        getAzucar(){
+            return this.azucar;
+        }
+
+        setAzucar(azucar){
+            this.azucar=azucar;
+        }
+    }
+
+
+/*
+4.- Crea una superclase llamada Electrodoméstico con las 
+    siguientes características:
+    a. Sus atributos son precio, color, consumoEnergetico
+       y capacidad (peso máximo)
+    b. El constructor solo debe pedir precio, color 
+       y capacidad. 
+    c. consumoEnergetico debe iniciar con valor de 100
+     */
+
+class Electrodoméstico{
+    constructor(precio,color,capacidad){
+        this.precio=precio;
+        this.color=color;
+        this.capacidad=capacidad;
+        this.consumoEnergetico = 100;
+    }
+}
+
+/**
+ * 5.- Crea una subclase de Electrodomestico llamada Lavadora 
+    con las siguientes características:
+    a. Su atributo es carga(kg de ropa), además de los 
+       atributos heredados.
+    b. Crea el método precioFinal(). Este se calcula
+       multiplicando el consumoEnergetico por la carga.
+ */
+
+ class Lavadora extends Electrodoméstico{
+     constructor(carga,precio,color,capacidad){
+         super(precio,color,capacidad);
+         this.carga=carga;
+     }
+
+     precioFinal(){
+         return this.consumoEnergetico*this.carga;
+     }
+ }
