@@ -58,7 +58,7 @@ getPeopleById(20)
         console.log(error);
     });
 
-getPeopleById(20)
+getPeopleById(200)
     .then(people =>   getMovieByUrl(people.films[0]))
     .then(movie  =>   console.log(movie.title))
     .catch(error =>  console.log(error));
