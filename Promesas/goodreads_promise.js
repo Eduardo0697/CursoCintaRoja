@@ -93,9 +93,9 @@ function deleteAuthorById(id){
         const json = { is_alive : true }
         return updateAuthorById(author.id, json)
     })
-    .then( authorModified =>  getAuthorById(authorModified.id))
-    .then( author => {
-        deleteAuthorById(author.id)
+    .then( authorModified => getAuthorById(authorModified.id))
+    .then(async author => {
+        await deleteAuthorById(author.id)
         return author.id
     })
     .then( id =>  getAuthorById(id))
